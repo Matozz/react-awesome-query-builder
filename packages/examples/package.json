@@ -41,6 +41,7 @@
     "@mui/x-date-pickers": "^5.0.20",
     "@popperjs/core": "^2.11.6",
     "@react-awesome-query-builder/antd": "workspace:^",
+    "@react-awesome-query-builder/semi": "workspace:^",
     "@react-awesome-query-builder/bootstrap": "workspace:^",
     "@react-awesome-query-builder/core": "workspace:^",
     "@react-awesome-query-builder/fluent": "workspace:^",

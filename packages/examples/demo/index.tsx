@@ -14,8 +14,8 @@ import clone from "clone";
 
 const stringify = JSON.stringify;
 const {elasticSearchFormat, queryBuilderFormat, jsonLogicFormat, queryString, _mongodbFormat, _sqlFormat, _spelFormat, getTree, checkTree, loadTree, uuid, loadFromJsonLogic, loadFromSpel, isValidTree} = Utils;
-const preStyle = { backgroundColor: "darkgrey", margin: "10px", padding: "10px" };
-const preErrorStyle = { backgroundColor: "lightpink", margin: "10px", padding: "10px" };
+const preStyle = { backgroundColor: "darkgrey", margin: "10px", padding: "10px", overflowX: "auto" } as React.CSSProperties;
+const preErrorStyle = { backgroundColor: "lightpink", margin: "10px", padding: "10px", overflowX: "auto" } as React.CSSProperties;
 
 const initialSkin = window._initialSkin || "mui";
 const emptyInitValue: JsonTree = {id: uuid(), type: "group"};
@@ -405,6 +405,7 @@ const DemoQueryBuilder: React.FC = () => {
           <option key="mui">mui</option>
           <option key="bootstrap">bootstrap</option>
           <option key="fluent">fluent</option>
+          <option key="semi">semi</option>
         </select>
         <button onClick={resetValue}>reset</button>
         <button onClick={clearValue}>clear</button>

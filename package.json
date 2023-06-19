@@ -48,6 +48,7 @@
     "packages/ui",
     "packages/antd",
     "packages/mui",
+    "packages/semi",
     "packages/material",
     "packages/bootstrap",
     "packages/fluent",

@@ -1,0 +1,41 @@
+@import "./vars.scss";
+
+.widget--valuesrc {
+  margin-right: 0;
+}
+
+$seps: ".widget--sep", ".operator--options--sep", ".rule--func--bracket-before", ".rule--func--bracket-after",
+  ".rule--func--arg-sep";
+
+#{$seps} {
+  vertical-align: middle;
+  align-self: center;
+}
+
+.group--conjunctions {
+  .semi-button {
+    width: 50px;
+  }
+}
+
+@mixin display_only_for_hovered_group($inactive, $active) {
+  @if $inactive {
+    #{$inactive} {
+      transition: padding 0.2s, width 0.2s, opacity 0.2s;
+    }
+    .group--header:hover .group--header,
+    .group--header:not(:hover),
+    .rule_group:not(:hover) {
+      #{$inactive} {
+        width: 0;
+        padding: 0;
+        overflow: hidden;
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.qb-lite {
+  @include display_only_for_hovered_group($inactive_conjs, $active_conjs);
+}

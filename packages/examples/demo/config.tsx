@@ -3,7 +3,7 @@ import merge from "lodash/merge";
 import {
   BasicFuncs, Utils, BasicConfig,
   // types:
-  Operators, Fields, Types, Conjunctions, LocaleSettings, OperatorProximity, Funcs, DateTimeWidget, FuncWidget, SelectWidget, 
+  Operators, Fields, Types, Conjunctions, LocaleSettings, OperatorProximity, Funcs, DateTimeWidget, FuncWidget, SelectWidget,
   Settings,
   DateTimeFieldSettings, TextFieldSettings, SelectFieldSettings, MultiSelectFieldSettings, NumberFieldSettings,
   TextWidgetProps,
@@ -23,6 +23,7 @@ import { MuiConfig } from "@react-awesome-query-builder/mui";
 import { MaterialConfig } from "@react-awesome-query-builder/material";
 import { BootstrapConfig } from "@react-awesome-query-builder/bootstrap";
 import { FluentUIConfig } from "@react-awesome-query-builder/fluent";
+import { SemiConfig } from "@react-awesome-query-builder/semi";
 const {
   FieldSelect,
   FieldDropdown,
@@ -37,7 +38,8 @@ const skinToConfig: Record<string, Config> = {
   material: MaterialConfig,
   mui: MuiConfig,
   bootstrap: BootstrapConfig,
-  fluent: FluentUIConfig
+  fluent: FluentUIConfig,
+  semi: SemiConfig
 };
 
 export default (skin: string) => {

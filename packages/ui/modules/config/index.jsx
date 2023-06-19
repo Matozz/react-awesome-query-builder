@@ -133,7 +133,7 @@ const settings = {
   defaultSelectWidth: "200px",
   defaultSearchWidth: "100px",
   defaultMaxRows: 5,
-  renderSize: "small",
+  renderSize: "medium",
   maxLabelsLength: 100,
 
   showLock: false,

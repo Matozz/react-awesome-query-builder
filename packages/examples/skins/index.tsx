@@ -6,6 +6,7 @@ const ImportMui = React.lazy(() => import("./mui"));
 const ImportMaterial = React.lazy(() => import("./material"));
 const ImportBootstrap = React.lazy(() => import("./bootstrap"));
 const ImportFluent = React.lazy(() => import("./fluent"));
+const ImportSemi = React.lazy(() => import("./semi"));
 
 const skinToImport: Record<string, React.LazyExoticComponent<React.ComponentType<any>>> = {
   vanilla: ImportUi,
@@ -13,10 +14,11 @@ const skinToImport: Record<string, React.LazyExoticComponent<React.ComponentType
   antd: ImportAntd,
   material: ImportMaterial,
   bootstrap: ImportBootstrap,
-  fluent: ImportFluent
+  fluent: ImportFluent,
+  semi: ImportSemi
 };
 
-const Import: React.FC<{skin: string}> = ({
+const Import: React.FC<{ skin: string }> = ({
   skin
 }) => {
   const Import = skinToImport[skin];

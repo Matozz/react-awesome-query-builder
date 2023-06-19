@@ -1,0 +1,11 @@
+$treeline-offset-from-conjs: 32px;
+$rule-parts-distance: 6px;
+$group-background: rgba(0, 100, 250, 0.05);
+$group-border-color: rgba(0, 100, 250, 0.15);
+$rulegroup-background: rgba(0, 100, 250, 0.05);
+$rulegroup-border-color: transparent;
+$inactive_conjs: (".group--conjunctions .semi-button.semi-button-tertiary");
+$active_conjs: (
+  ".group--conjunctions .semi-button.semi-button-primary",
+  ".group--conjunctions .semi-button.semi-button-danger"
+);
