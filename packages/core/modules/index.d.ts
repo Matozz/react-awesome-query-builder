@@ -835,8 +835,8 @@ type SpelFieldMeta = {
   isSpelVariable?: boolean,
 };
 type ValueSourcesInfo = {[vs in ValueSource]?: {label: string, widget?: string}};
-type AntdPosition = "topLeft" | "topCenter" | "topRight" | "bottomLeft" | "bottomCenter" | "bottomRight";
-type AntdSize = "small" | "large" | "medium";
+type Position = "topLeft" | "topCenter" | "topRight" | "bottomLeft" | "bottomCenter" | "bottomRight";
+type Size = "small" | "large" | "medium";
 type ChangeFieldStrategy = "default" | "keep" | "first" | "none";
 type FormatReverse = (q: string, op: string, reversedOp: string, operatorDefinition: Operator, revOperatorDefinition: Operator, isForDisplay: boolean) => string;
 type SqlFormatReverse = (q: string) => string;
@@ -849,13 +849,10 @@ type FormatAggr = (whereStr: string, aggrField: string, operator: string, value:
 export interface LocaleSettings {
   locale?: {
     moment?: string,
-    antd?: Object,
-    material?: Object,
-    mui?: Object,
+    semi?: Object
   },
   theme?: {
-    material?: Object,
-    mui?: Object,
+    semi: Object
   },
   valueLabel?: string,
   valuePlaceholder?: string,

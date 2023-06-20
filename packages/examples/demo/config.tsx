@@ -1,45 +1,35 @@
 import React, { Component } from "react";
 import merge from "lodash/merge";
 import {
-  BasicFuncs, Utils, BasicConfig,
+  BasicFuncs,
+  Utils,
+  BasicConfig,
   // types:
-  Operators, Fields, Types, Conjunctions, LocaleSettings, OperatorProximity, Funcs, DateTimeWidget, FuncWidget, SelectWidget,
+  Operators,
+  Fields,
+  Types,
+  Conjunctions,
+  LocaleSettings,
+  OperatorProximity,
+  Funcs,
   Settings,
-  DateTimeFieldSettings, TextFieldSettings, SelectFieldSettings, MultiSelectFieldSettings, NumberFieldSettings,
-  TextWidgetProps,
-  WidgetProps,
+  DateTimeFieldSettings,
+  TextFieldSettings,
+  SelectFieldSettings,
+  MultiSelectFieldSettings,
+  NumberFieldSettings,
   Widgets,
-  TextWidget,
-  TreeSelectWidget,
   Config,
 } from "@react-awesome-query-builder/ui";
 import moment from "moment";
-import ru_RU from "antd/es/locale/ru_RU";
-import { ruRU } from "@material-ui/core/locale";
-import { ruRU as muiRuRU } from "@mui/material/locale";
 
-import { AntdConfig, AntdWidgets } from "@react-awesome-query-builder/antd";
-import { MuiConfig } from "@react-awesome-query-builder/mui";
-import { MaterialConfig } from "@react-awesome-query-builder/material";
-import { BootstrapConfig } from "@react-awesome-query-builder/bootstrap";
-import { FluentUIConfig } from "@react-awesome-query-builder/fluent";
 import { SemiConfig } from "@react-awesome-query-builder/semi";
-const {
-  FieldSelect,
-  FieldDropdown,
-  FieldCascader,
-  FieldTreeSelect,
-} = AntdWidgets;
+
 const { simulateAsyncFetch } = Utils.Autocomplete;
 
 const skinToConfig: Record<string, Config> = {
   vanilla: BasicConfig,
-  antd: AntdConfig,
-  material: MaterialConfig,
-  mui: MuiConfig,
-  bootstrap: BootstrapConfig,
-  fluent: FluentUIConfig,
-  semi: SemiConfig
+  semi: SemiConfig,
 };
 
 export default (skin: string) => {
@@ -84,10 +74,10 @@ export default (skin: string) => {
       minProximity: 2,
       maxProximity: 10,
       defaults: {
-        proximity: 2
+        proximity: 2,
       },
-      customProps: {}
-    }
+      customProps: {},
+    },
   };
 
   const operators: Operators = {
@@ -96,33 +86,26 @@ export default (skin: string) => {
     proximity,
     between: {
       ...InitialConfig.operators.between,
-      valueLabels: [
-        "Value from",
-        "Value to"
-      ],
-      textSeparators: [
-        "from",
-        "to"
-      ],
+      valueLabels: ["Value from", "Value to"],
+      textSeparators: ["from", "to"],
     },
   };
-
 
   const widgets: Widgets = {
     ...InitialConfig.widgets,
     // examples of overriding
     text: {
-      ...InitialConfig.widgets.text
+      ...InitialConfig.widgets.text,
     },
     textarea: {
       ...InitialConfig.widgets.textarea,
-      maxRows: 3
+      maxRows: 3,
     },
     slider: {
-      ...InitialConfig.widgets.slider
+      ...InitialConfig.widgets.slider,
     },
     rangeslider: {
-      ...InitialConfig.widgets.rangeslider
+      ...InitialConfig.widgets.rangeslider,
     },
     date: {
       ...InitialConfig.widgets.date,
@@ -143,8 +126,8 @@ export default (skin: string) => {
     func: {
       ...InitialConfig.widgets.func,
       customProps: {
-        showSearch: true
-      }
+        showSearch: true,
+      },
     },
     select: {
       ...InitialConfig.widgets.select,
@@ -155,18 +138,17 @@ export default (skin: string) => {
         //showCheckboxes: false,
         width: "200px",
         input: {
-          width: "100px"
-        }
-      }
+          width: "100px",
+        },
+      },
     },
     treeselect: {
       ...InitialConfig.widgets.treeselect,
       customProps: {
-        showSearch: true
-      }
+        showSearch: true,
+      },
     },
   };
-
 
   const types: Types = {
     ...InitialConfig.types,
@@ -180,28 +162,24 @@ export default (skin: string) => {
         boolean: {
           widgetProps: {
             hideOperator: true,
-            operatorInlineLabel: "is"
+            operatorInlineLabel: "is",
           },
           opProps: {
             equal: {
-              label: "is"
+              label: "is",
             },
             not_equal: {
-              label: "is not"
-            }
-          }
+              label: "is not",
+            },
+          },
         },
       },
     }),
   };
 
-
   const localeSettings: LocaleSettings = {
     locale: {
       moment: "ru",
-      antd: ru_RU,
-      material: ruRU,
-      mui: muiRuRU
     },
     valueLabel: "Value",
     valuePlaceholder: "Value",
@@ -224,13 +202,13 @@ export default (skin: string) => {
       title: "Are you sure delete this rule?",
       okText: "Yes",
       okType: "danger",
-      cancelText: "Cancel"
+      cancelText: "Cancel",
     },
     removeGroupConfirmOptions: {
       title: "Are you sure delete this group?",
       okText: "Yes",
       okType: "danger",
-      cancelText: "Cancel"
+      cancelText: "Cancel",
     },
   };
 
@@ -245,7 +223,7 @@ export default (skin: string) => {
 
     valueSourcesInfo: {
       value: {
-        label: "Value"
+        label: "Value",
       },
       field: {
         label: "Field",
@@ -254,7 +232,7 @@ export default (skin: string) => {
       func: {
         label: "Function",
         widget: "func",
-      }
+      },
     },
     // canReorder: true,
     // canRegroup: true,
@@ -266,7 +244,7 @@ export default (skin: string) => {
     shouldCreateEmptyGroup: false,
     showErrorMessage: true,
     customFieldSelectProps: {
-      showSearch: true
+      showSearch: true,
     },
     // renderField: (props) => <FieldCascader {...props} />,
     // renderOperator: (props) => <FieldDropdown {...props} />,
@@ -287,7 +265,7 @@ export default (skin: string) => {
           type: "text",
           fieldSettings: {
             validateValue: (val, fieldSettings) => {
-              return (val.length < 10);
+              return val.length < 10;
             },
           } as TextFieldSettings,
           mainWidgetProps: {
@@ -300,15 +278,15 @@ export default (skin: string) => {
           tableName: "t1", // legacy: PR #18, PR #20
           fieldSettings: {
             validateValue: (val, fieldSettings) => {
-              return (val.length < 10 && (val === "" || val.match(/^[A-Za-z0-9_-]+$/) !== null));
+              return val.length < 10 && (val === "" || val.match(/^[A-Za-z0-9_-]+$/) !== null);
             },
           } as TextFieldSettings,
           mainWidgetProps: {
             valueLabel: "Login",
             valuePlaceholder: "Enter login",
           },
-        }
-      }
+        },
+      },
     },
     bio: {
       label: "Bio",
@@ -316,7 +294,7 @@ export default (skin: string) => {
       preferWidgets: ["textarea"],
       fieldSettings: {
         maxLength: 1000,
-      }
+      },
     },
     results: {
       label: "Results",
@@ -336,8 +314,8 @@ export default (skin: string) => {
             max: 100,
           },
           valueSources: ["value"],
-        }
-      }
+        },
+      },
     },
     cars: {
       label: "Cars",
@@ -379,8 +357,8 @@ export default (skin: string) => {
             max: 2021,
           },
           valueSources: ["value"],
-        }
-      }
+        },
+      },
     },
     prox1: {
       label: "prox",
@@ -394,7 +372,7 @@ export default (skin: string) => {
       preferWidgets: ["number"],
       fieldSettings: {
         min: -1,
-        max: 5
+        max: 5,
       },
       funcs: ["LINEAR_REGRESSION"],
     },
@@ -409,10 +387,10 @@ export default (skin: string) => {
         step: 1,
         marks: {
           0: <strong>0%</strong>,
-          100: <strong>100%</strong>
+          100: <strong>100%</strong>,
         },
         validateValue: (val, fieldSettings) => {
-          return (val < 50 ? null : "Invalid slider value, see validateValue()");
+          return val < 50 ? null : "Invalid slider value, see validateValue()";
         },
       } as NumberFieldSettings,
       //overrides
@@ -420,7 +398,7 @@ export default (skin: string) => {
         slider: {
           widgetProps: {
             valuePlaceholder: "..Slider",
-          }
+          },
         },
         rangeslider: {
           widgetProps: {
@@ -428,7 +406,7 @@ export default (skin: string) => {
               { label: "Number from", placeholder: "from" },
               { label: "Number to", placeholder: "to" },
             ],
-          }
+          },
         },
       },
     },
@@ -441,7 +419,7 @@ export default (skin: string) => {
         validateValue: (val, fieldSettings: DateTimeFieldSettings) => {
           // example of date validation
           const dateVal = moment(val, fieldSettings.valueFormat);
-          return dateVal.year() != (new Date().getFullYear()) ? "Please use current year" : null;
+          return dateVal.year() != new Date().getFullYear() ? "Please use current year" : null;
         },
       } as DateTimeFieldSettings,
     },
@@ -454,12 +432,12 @@ export default (skin: string) => {
     datetime: {
       label: "DateTime",
       type: "datetime",
-      valueSources: ["value", "func"]
+      valueSources: ["value", "func"],
     },
     datetime2: {
       label: "DateTime2",
       type: "datetime",
-      valueSources: ["field"]
+      valueSources: ["field"],
     },
     color: {
       label: "Color",
@@ -477,7 +455,7 @@ export default (skin: string) => {
         listValues: [
           { value: "yellow", title: "Yellow" },
           { value: "green", title: "Green" },
-          { value: "orange", title: "Orange" }
+          { value: "orange", title: "Orange" },
         ],
       },
     },
@@ -489,9 +467,9 @@ export default (skin: string) => {
           yellow: "Yellow",
           green: "Green",
           orange: "Orange",
-          purple: "Purple"
+          purple: "Purple",
         },
-      }
+      },
     },
     multicolor: {
       label: "Colors",
@@ -501,10 +479,10 @@ export default (skin: string) => {
         listValues: {
           yellow: "Yellow",
           green: "Green",
-          orange: "Orange"
+          orange: "Orange",
         },
         allowCustomValues: true,
-      }
+      },
     },
     selecttree: {
       label: "Color (tree)",
@@ -537,7 +515,7 @@ export default (skin: string) => {
           { value: "7", title: "Sub blue", parent: "6" },
           { value: "8", title: "Sub sub blue and a long text", parent: "7" },
         ],
-      }
+      },
     },
     multiselecttree: {
       label: "Colors (tree)",
@@ -546,27 +524,33 @@ export default (skin: string) => {
         treeExpandAll: true,
         treeValues: [
           {
-            value: "1", title: "Warm colors", children: [
+            value: "1",
+            title: "Warm colors",
+            children: [
               { value: "2", title: "Red" },
-              { value: "3", title: "Orange" }
-            ]
+              { value: "3", title: "Orange" },
+            ],
           },
           {
-            value: "4", title: "Cool colors", children: [
+            value: "4",
+            title: "Cool colors",
+            children: [
               { value: "5", title: "Green" },
               {
-                value: "6", title: "Blue", children: [
+                value: "6",
+                title: "Blue",
+                children: [
                   {
-                    value: "7", title: "Sub blue", children: [
-                      { value: "8", title: "Sub sub blue and a long text" }
-                    ]
-                  }
-                ]
-              }
-            ]
-          }
-        ]
-      }
+                    value: "7",
+                    title: "Sub blue",
+                    children: [{ value: "8", title: "Sub sub blue and a long text" }],
+                  },
+                ],
+              },
+            ],
+          },
+        ],
+      },
     },
     autocomplete: {
       label: "Autocomplete",
@@ -577,7 +561,7 @@ export default (skin: string) => {
         useAsyncSearch: true,
         useLoadMore: true,
         forceAsyncSearch: false,
-        allowCustomValues: false
+        allowCustomValues: false,
       } as SelectFieldSettings,
     },
     autocompleteMultiple: {
@@ -589,7 +573,7 @@ export default (skin: string) => {
         useAsyncSearch: true,
         useLoadMore: true,
         forceAsyncSearch: false,
-        allowCustomValues: false
+        allowCustomValues: false,
       } as SelectFieldSettings,
     },
     stock: {
@@ -598,15 +582,15 @@ export default (skin: string) => {
       defaultValue: true,
       mainWidgetProps: {
         labelYes: "+",
-        labelNo: "-"
-      }
+        labelNo: "-",
+      },
     },
   };
 
   //////////////////////////////////////////////////////////////////////
 
   const funcs: Funcs = {
-    ...BasicFuncs
+    ...BasicFuncs,
   };
 
   const ctx = InitialConfig.ctx;

@@ -17,7 +17,7 @@ export default (props) => {
       type="button"
       value={Boolean(value)}
       disabled={readonly}
-      buttonSize={renderSize}
+      buttonSize={renderSize === "default" ? "middle" : renderSize}
       onChange={onRadioChange}
       {...(customProps || {})}
       style={{

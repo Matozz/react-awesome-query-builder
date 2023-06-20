@@ -1,5 +1,6 @@
 ts_out/
 node_modules/
+scripts/
 dist/
 build/
 coverage/
@@ -23,3 +24,16 @@ pnpm-lock.yaml
 .vscode
 .circleci
 .travis.yml
+
+.babelrc.js
+*.yaml
+
+.eslintignore
+.eslintrc.js
+tsconfig.json
+
+node_modules
+modules
+styles
+scripts
+examples

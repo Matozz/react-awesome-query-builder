@@ -1,8 +1,8 @@
 {
   "name": "@react-awesome-query-builder/root",
-  "version": "0.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "User-friendly query builder for React. Demo: https://ukrbublik.github.io/react-awesome-query-builder",
+  "description": "User-friendly query builder for React with semi",
   "keywords": [
     "query-builder",
     "query",
@@ -20,43 +20,14 @@
     "react-component",
     "react-components",
     "ui",
-    "antd",
-    "antdesign",
-    "ant-design",
-    "material",
-    "material-ui",
-    "material-design",
-    "mui",
-    "bootstrap",
-    "reactstrap",
-    "fluent",
-    "office-ui-fabric"
+    "semi"
   ],
-  "homepage": "https://github.com/ukrbublik/react-awesome-query-builder",
-  "bugs": {
-    "url": "https://github.com/ukrbublik/react-awesome-query-builder/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ukrbublik/react-awesome-query-builder.git"
-  },
-  "funding": "https://opencollective.com/react-awesome-query-builder",
   "license": "MIT",
-  "author": "Denis Oblogin <ukrbublik@gmail.com> (https://github.com/ukrbublik)",
   "workspaces": [
     "packages/core",
     "packages/ui",
-    "packages/antd",
-    "packages/mui",
     "packages/semi",
-    "packages/material",
-    "packages/bootstrap",
-    "packages/fluent",
-    "packages/tests",
-    "packages/examples",
-    "packages/sandbox",
-    "packages/sandbox_simple",
-    "packages/sandbox_next"
+    "packages/examples"
   ],
   "scripts": {
     "build": "pnpm run build-libs && pnpm run build-examples",
@@ -96,7 +67,6 @@
     "eslint-plugin-babel": "^5.3.1",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-react": "^7.32.2",
-    "lerna": "^6.1.0",
     "process": "^0.11.10",
     "typescript": "~4.9.4"
   },

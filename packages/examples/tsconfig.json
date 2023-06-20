@@ -3,11 +3,7 @@
     "target": "es6",
     "module": "esnext",
     "jsx": "preserve",
-    "lib": [
-      "es2015",
-      "dom",
-      "dom.iterable"
-    ],
+    "lib": ["es2015", "dom", "dom.iterable"],
     "allowJs": true,
     "outDir": "ts_out",
     "declaration": true,
@@ -23,17 +19,9 @@
     "paths": {
       "@react-awesome-query-builder/core": ["../core/modules"],
       "@react-awesome-query-builder/ui": ["../ui/modules"],
-      "@react-awesome-query-builder/antd": ["../antd/modules"],
-      "@react-awesome-query-builder/mui": ["../mui/modules"],
-      "@react-awesome-query-builder/material": ["../material/modules"],
-      "@react-awesome-query-builder/bootstrap": ["../bootstrap/modules"],
-      "@react-awesome-query-builder/fluent": ["../fluent/modules"],
+      "@react-awesome-query-builder/semi": ["../semi/modules"]
     },
     "skipLibCheck": true
   },
-  "include": [
-    "demo/**/*",
-    "demo_switch/**/*",
-    "index.tsx"
-  ]
+  "include": ["demo/**/*", "index.tsx"]
 }

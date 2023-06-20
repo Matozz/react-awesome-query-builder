@@ -1,6 +1,6 @@
 {
   "name": "@react-awesome-query-builder/ui",
-  "version": "6.2.0",
+  "version": "2.0.0",
   "description": "User-friendly query builder for React. Core React UI",
   "keywords": [
     "query-builder",
@@ -23,18 +23,10 @@
     "react-component",
     "react-components"
   ],
-  "homepage": "https://github.com/ukrbublik/react-awesome-query-builder",
-  "bugs": "https://github.com/ukrbublik/react-awesome-query-builder/issues",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ukrbublik/react-awesome-query-builder.git",
-    "directory": "packages/ui"
-  },
   "license": "MIT",
-  "author": "Denis Oblogin <ukrbublik@gmail.com> (https://github.com/ukrbublik)",
   "exports": {
     ".": {
-      "types": "./modules/index.d.ts",
+      "types": "./esm/index.d.ts",
       "import": "./esm/index.js",
       "require": "./cjs/index.js"
     },
@@ -46,7 +38,7 @@
   },
   "main": "./cjs/index.js",
   "module": "./esm/index.js",
-  "types": "./modules/index.d.ts",
+  "types": "./esm/index.d.ts",
   "scripts": {
     "build": "sh ./scripts/build-npm.sh",
     "eslint": "eslint --ext .jsx --ext .js --ext .tsx --ext .ts  ./modules/",
